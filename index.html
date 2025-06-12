@@ -1,66 +1,67 @@
 <!doctype html>
-<html>
+<html class="overflow-x-hidden" >
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <link href="./output.css" rel="stylesheet">
 </head>
-<body class="overflow-x-hidden">
-  <!-- Navbar -->
-<nav class="flex bg-white justify-between items-center p-3">
-  <a href="#" id="brand" alt="logo" class="flex items-center gap-2">
-    <img class="object-cover max-w-12 max-h-12" src="assets/asset 0.png" alt="logo">
-    <span class="text-lg font-medium font-display">ToDesktop</span>
-  </a>
-    <a href="#" class="font-medium hover:text-[#3238F2]">Pricing</a>
-    <a href="#" class="font-medium hover:text-[#3238F2]">Docs</a>
-    <a href="#" class="font-medium hover:text-[#3238F2]">Changelog</a>
-    <a href="#" class="font-medium hover:text-[#3238F2]">Blogs</a>
-    <a href="#" class="font-medium hover:text-[#3238F2]">Login</a>
-  </div>
+<body>
+<div class="max-w-[100vw] overflow-x-hidden">
+    <!-- Navbar -->
+    <nav class="p-3 flex bg-white justify-between items-center fixed top-0 left-0 right-0 z-20 shadow-md">
+        <a href="#" id="brand" class="flex gap-2 items-center flex-1">
+            <img class="object-cover max-w-12 max-h-12" src="./assets/asset 0.png" alt="Logo">
+            <span class="text-lg font-medium font-display">ToDesktop</span>
+        </a>
+        <div id="nav-menu" class="hidden lg:flex gap-12">
+            <a href="#" class="font-medium hover:text-primary">Pricing</a>
+            <a href="#" class="font-medium hover:text-primary">Docs</a>
+            <a href="#" class="font-medium hover:text-primary">Changelog</a>
+            <a href="#" class="font-medium hover:text-primary">Blogs</a>
+            <a href="#" class="font-medium hover:text-primary">Login</a>
+        </div>
+        <div class="hidden lg:flex flex-1 justify-end">
+            <button class="flex gap-2 items-center border border-gray-400 px-6 py-2 rounded-lg hover:border-gray-600">
+                <img src="./assets/asset 1.svg" alt="">
+                <span class="font-display font-medium">Electron Developers</span>
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </div>
+        
 
-  <button class="hidden lg:flex gap-2 items-center border-1 border-grey-400 px-6 py-2 rounded-lg hover:border-grey-600">
-    <img src="assets/asset 1.svg" alt="ED">
-    <span>Electron Developers </span>
-    <i class="fa-solid fa-arrow-right"></i>
-  </button>
+        <button class="p-2 lg:hidden" onclick="handleMenu()">
+            <i class="fa-solid fa-bars text-gray-600"></i>
+        </button>
 
-  <button class="p-2 lg:hidden" onclick="handleMenu()">
-    <i class="fa-solid fa-bars text-gray-600"></i>
-  </button>
+        <div id="nav-dialog" class="hidden fixed z-10 md:hidden bg-white inset-0 p-3">
+            <div id="nav-bar" class="flex justify-between">
+                <a href="#" id="brand" class="flex gap-2 items-center">
+                    <img class="object-cover max-w-12 max-h-12" src="./assets/asset 0.png" alt="Logo">
+                    <span class="text-lg font-medium font-display">ToDesktop</span>
+                </a>
+                <button class="p-2 md:hidden" onclick="handleMenu()">
+                    <i class="fa-solid fa-xmark text-gray-600"></i>
+                </button>
+            </div>
+            <div class="mt-6">
+                <a href="#" class="font-medium m-3 p-3 hover:bg-gray-50 block rounded-lg">Pricing</a>
+                <a href="#" class="font-medium m-3 p-3 hover:bg-gray-50 block rounded-lg">Docs</a>
+                <a href="#" class="font-medium m-3 p-3 hover:bg-gray-50 block rounded-lg">Changelog</a>
+                <a href="#" class="font-medium m-3 p-3 hover:bg-gray-50 block rounded-lg">Blogs</a>
+                <a href="#" class="font-medium m-3 p-3 hover:bg-gray-50 block rounded-lg">Login</a>
 
-  <div id="nav-dialog" class="hidden fixed z-10 md:hidden bg-white inset-0 p-3">
-    <div id="nav-bar" class="flex justify-between">
- <a href="#" id="brand" alt="logo" class="flex  gap-2 items-center flex-1">
-    <img class="object-cover max-w-12 max-h-12" src="assets/asset 0.png" alt="logo">
-    <span class="text-lg font-medium font-display">ToDesktop</span>
-  </a>
+            </div>
+            <div class="h-[1px] bg-gray-300"></div>
+            <button class="mt-6 w-full flex gap-2 items-center  px-6 py-4 rounded-lg hover:bg-gray-50">
+                <img src="./assets/asset 1.svg" alt="">
+                <span>Electron Developers</span>
+            </button>
+        </div>
 
-  <button class="p-2 md:hidden" onclick="handleMenu()">
-    <i class="fa-solid fa-xmark"></i>
-  </button>
-    </div>
-    <div>
-      <a href="#" class="font-medium m-3 p-3 hover:bg-gray-50 block rounded-lg">Pricing</a>
-      <a href="#" class="font-medium m-3 p-3 hover:bg-gray-50 block rounded-lg">Docs</a>
-      <a href="#" class="font-medium m-3 p-3 hover:bg-gray-50 block rounded-lg">Changelog</a>
-      <a href="#" class="font-medium m-3 p-3 hover:bg-gray-50 block rounded-lg">Blog</a>
-      <a href="#" class="font-medium m-3 p-3 hover:bg-gray-50 block rounded-lg">Login</a>
-    </div>
-    <div class="h-[1px] bg-gray-300"></div>
-    <div class="flex-1">
-      <button class="mt-6 w-full flex gap-2 items-center px-6 py-4 rounded-lg hover:bg-gray-50">
-    <img src="assets/asset 1.svg" alt="ED">
-    <span>Electron Developers </span>
-
-  </button> 
-    </div>
-  </div>
-
-</nav>
+    </nav>
 <!-- Main -->
- <main>
+ <main class="mt-16">
 <!-- Hero Section -->
  <div id="hero" class="min-h-screen bg-gradient-to-b from-purple-200 via-orange-50 to-transparent">
   <div id="hero-container" class="max-w-4xl mx-auto px-6 pb-32 pt-6 flex flex-col sm:items-center sm:text-center sm:pt-12">
@@ -989,6 +990,7 @@ ToDesktop uses a technology called Electron. You don’t need Electron (or even 
     </footer>
 <!-- <div class="h-[1000px]"></div> -->
  </main>
+</div>
 <script src="script.js" defer></script>
 </body>
 
